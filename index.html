@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoFrame — Премиальные каркасные дома без усадки</title>
+    <meta name="description"
+        content="Строительство элитных каркасных домов под ключ. Гарантия 15 лет по договору, доска камерной сушки. Проектирование и дизайн.">
+
+    <!-- Микроразметка Organization (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "EcoFrame",
+      "url": "https://ecoframe.ru",
+      "logo": "https://ecoframe.ru/logo.png",
+      "description": "Строительство премиальных каркасных домов из древесины камерной сушки.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+7-495-000-00-00",
+        "contactType": "customer service",
+        "areaServed": "RU",
+        "availableLanguage": "Russian"
+      }
+    }
+    </script>
+
+    <!-- Шрифты (Instrument Serif + Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Instrument Serif', 'serif'],
+                    },
+                    colors: {
+                        neutral: {
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        forest: {
+                            800: '#11352A',
+                            900: '#0B221B',
+                        },
+                        wood: {
+                            500: '#C27A3C',
+                            600: '#A1591C',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Стили: Liquid Glass и Анимации -->
+    <style>
+        .font-serif {
+            line-height: 1.05;
+        }
+
+        /* Эффект Liquid Glass */
+        .liquid-glass {
+            background: linear-gradient(145deg, rgba(23, 23, 23, 0.45) 0%, rgba(23, 23, 23, 0.2) 100%);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow:
+                0 4px 30px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        }
+
+        .liquid-card {
+            background: linear-gradient(135deg, rgba(17, 53, 42, 0.4) 0%, rgba(10, 10, 10, 0.3) 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+        }
+
+        .liquid-card:hover {
+            transform: translateY(-8px);
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.25);
+            background: linear-gradient(135deg, rgba(17, 53, 42, 0.5) 0%, rgba(10, 10, 10, 0.4) 100%);
+        }
+
+        /* Заглушка Hero Background */
+        .bg-hero {
+            background-color: #0a0a0a;
+            /* Изображение премиального каркасного/фахверкового дома в лесу */
+            background-image:
+                linear-gradient(to bottom, rgba(10, 10, 10, 0.5) 0%, rgba(10, 10, 10, 0.95) 100%),
+                linear-gradient(to right, rgba(11, 34, 27, 0.4) 0%, rgba(10, 10, 10, 0.2) 100%),
+                url('https://images.unsplash.com/photo-1542314831-c5a4d407e202?q=80&w=2070&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .accent-gradient-text {
+            background: linear-gradient(to right, #FFF, #C27A3C);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-neutral-950 text-white font-sans antialiased overflow-x-hidden selection:bg-wood-500 selection:text-white">
+
+    <!-- Навигационная панель (Liquid Glass) -->
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 pt-4 md:pt-6 pb-4 px-4 md:px-8">
+        <div class="max-w-7xl mx-auto">
+            <nav
+                class="liquid-glass rounded-2xl md:rounded-full px-6 md:px-8 py-3.5 flex justify-between items-center transition-all">
+
+                <!-- Логотип -->
+                <a href="#" class="font-serif italic text-2xl md:text-3xl text-white flex items-center gap-2">
+                    EcoFrame<span class="text-wood-500 w-2 h-2 rounded-full bg-wood-500 inline-block mb-1"></span>
+                </a>
+
+                <!-- Десктоп Меню -->
+                <div class="hidden md:flex items-center gap-10 text-sm font-medium text-neutral-300 tracking-wide">
+                    <a href="#about" class="hover:text-white transition-colors duration-300">О компании</a>
+                    <a href="#projects" class="hover:text-white transition-colors duration-300">Проекты</a>
+                    <a href="#technology" class="hover:text-white transition-colors duration-300">Технологии</a>
+                </div>
+
+                <!-- Контакты/CTA -->
+                <div class="hidden md:flex items-center gap-8">
+                    <a href="tel:+74950000000"
+                        class="text-sm font-medium font-sans hover:text-wood-500 transition-colors tracking-wide">+7
+                        (495) 000-00-00</a>
+                    <a href="#consultation"
+                        class="bg-forest-800 hover:bg-forest-900 border border-forest-800 text-white px-7 py-2.5 rounded-full text-sm font-medium transition-all shadow-lg shadow-forest-900/50 hover:border-wood-500/30">
+                        Обсудить проект
+                    </a>
+                </div>
+
+                <!-- Мобильное Меню (Бургер) -->
+                <button class="md:hidden text-neutral-300 hover:text-white p-2">
+                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                            d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Главный Экран (Hero) -->
+    <main>
+        <section class="relative min-h-[100dvh] flex flex-col justify-end bg-hero pt-32 pb-12 md:pb-20">
+
+            <!-- Основной контент Hero -->
+            <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10 w-full mb-12 md:mb-20">
+                <div class="max-w-4xl">
+                    <!-- Заголовок H1 -->
+                    <h1
+                        class="font-serif text-5xl sm:text-6xl md:text-[5.5rem] text-white pr-4 mb-6 md:mb-8 drop-shadow-2xl">
+                        Архитектура леса. <br>
+                        <span class="italic text-neutral-300 font-light">Дома, в которых</span> <span
+                            class="accent-gradient-text">дышится легко.</span>
+                    </h1>
+
+                    <!-- Подзаголовок (Inter) -->
+                    <p
+                        class="text-base md:text-xl text-neutral-300 mb-10 max-w-2xl leading-relaxed font-light tracking-wide">
+                        Мы создаем современные каркасные резиденции премиум-класса. Интеграция в природный ландшафт,
+                        строгие стандарты экологичности и исключительный уровень комфорта.
+                    </p>
+
+                    <!-- Кнопки -->
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
+                        <a href="#catalog"
+                            class="bg-wood-500 hover:bg-wood-600 text-white px-8 py-4 md:py-4.5 rounded-full font-medium text-center transition-all duration-300 shadow-xl shadow-wood-600/20 hover:shadow-wood-500/40 flex items-center justify-center gap-3 text-sm md:text-base tracking-wide uppercase">
+                            Выбрать проект
+                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                        <a href="#portfolio"
+                            class="liquid-glass hover:bg-white/5 text-white px-8 py-4 md:py-4.5 rounded-full font-medium text-center transition-all duration-300 flex items-center justify-center text-sm md:text-base tracking-wide backdrop-blur-3xl">
+                            Смотреть портфолио
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- E-E-A-T Триггеры (Liquid Glass Карточки) -->
+            <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10 w-full">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+
+                    <!-- Карточка 1 -->
+                    <div class="liquid-card rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-white/5 mb-2">
+                            <svg class="w-5 h-5 text-wood-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-sans font-medium text-lg md:text-xl text-white tracking-wide">Гарантия 15 лет по
+                            договору</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed font-light mt-auto">Юридически закрепленная
+                            ответственность за силовой каркас и фундамент.</p>
+                    </div>
+
+                    <!-- Карточка 2 -->
+                    <div class="liquid-card rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-white/5 mb-2">
+                            <svg class="w-5 h-5 text-wood-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-sans font-medium text-lg md:text-xl text-white tracking-wide">Доска строгой
+                            камерной сушки</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed font-light mt-auto">Используем исключительно
+                            сухой строганый пиломатериал (влажность 12-14%).</p>
+                    </div>
+
+                    <!-- Карточка 3 -->
+                    <div class="liquid-card rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col gap-4">
+                        <div
+                            class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-white/5 mb-2">
+                            <svg class="w-5 h-5 text-wood-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+                        </div>
+                        <h3 class="font-sans font-medium text-lg md:text-xl text-white tracking-wide">Без усадки —
+                            заезжай сразу</h3>
+                        <p class="text-sm text-neutral-400 leading-relaxed font-light mt-auto">Технология позволяет
+                            начать чистовую отделку и переезд сразу после сдачи дома.</p>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+</body>
+
+</html>
