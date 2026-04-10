@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoFrame — Премиальные каркасные дома без усадки</title>
+    <title>EcoFrame — Премиальные каркасные резиденции | Архитектура будущего</title>
     <meta name="description"
-        content="Строительство элитных каркасных домов под ключ. Гарантия 15 лет по договору, доска камерной сушки. Проектирование и дизайн.">
+        content="Строительство элитных каркасных домов под ключ. Гарантия 15 лет, инновационные технологии 2026 года. Индивидуальное проектирование.">
 
     <!-- Микроразметка Organization (JSON-LD) -->
     <script type="application/ld+json">
@@ -27,12 +27,10 @@
     }
     </script>
 
-    <!-- Шрифты (Instrument Serif + Inter) -->
+    <!-- Шрифты (Playfair Display + Outfit) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
 
     <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -41,21 +39,15 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        serif: ['Instrument Serif', 'serif'],
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
                     },
                     colors: {
-                        neutral: {
-                            900: '#171717',
-                            950: '#0a0a0a',
-                        },
-                        forest: {
-                            800: '#11352A',
-                            900: '#0B221B',
-                        },
-                        wood: {
-                            500: '#C27A3C',
-                            600: '#A1591C',
+                        luxury: {
+                            gold: '#D4AF37',
+                            goldHover: '#C5A028',
+                            dark: '#050505',
+                            accent: '#1A2F23'
                         }
                     }
                 }
@@ -63,198 +55,285 @@
         }
     </script>
 
-    <!-- Стили: Liquid Glass и Анимации -->
+    <!-- Стили: Ultra Liquid Glass -->
     <style>
-        .font-serif {
-            line-height: 1.05;
+        :root {
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --glass-highlight: rgba(255, 255, 255, 0.15);
         }
 
-        /* Эффект Liquid Glass */
-        .liquid-glass {
-            background: linear-gradient(145deg, rgba(23, 23, 23, 0.45) 0%, rgba(23, 23, 23, 0.2) 100%);
-            backdrop-filter: blur(24px);
-            -webkit-backdrop-filter: blur(24px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow:
-                0 4px 30px rgba(0, 0, 0, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
         }
 
-        .liquid-card {
-            background: linear-gradient(135deg, rgba(17, 53, 42, 0.4) 0%, rgba(10, 10, 10, 0.3) 100%);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-top: 1px solid rgba(255, 255, 255, 0.15);
-            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+        /* Ambient Mesh Background */
+        .mesh-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(at 0% 0%, rgba(26, 47, 35, 0.4) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(212, 175, 55, 0.05) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(26, 47, 35, 0.3) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(5, 5, 5, 1) 0px, transparent 50%);
+            filter: blur(80px);
         }
 
-        .liquid-card:hover {
-            transform: translateY(-8px);
-            box-shadow:
-                0 20px 40px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.25);
-            background: linear-gradient(135deg, rgba(17, 53, 42, 0.5) 0%, rgba(10, 10, 10, 0.4) 100%);
+        /* Ultra Liquid Glass Effect */
+        .glass-panel {
+            background: var(--glass-bg);
+            backdrop-filter: blur(30px);
+            border: 1px solid var(--glass-border);
+            border-top: 1px solid var(--glass-highlight);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
         }
 
-        /* Заглушка Hero Background */
-        .bg-hero {
-            background-color: #0a0a0a;
-            /* Изображение премиального каркасного/фахверкового дома в лесу */
-            background-image:
-                linear-gradient(to bottom, rgba(10, 10, 10, 0.5) 0%, rgba(10, 10, 10, 0.95) 100%),
-                linear-gradient(to right, rgba(11, 34, 27, 0.4) 0%, rgba(10, 10, 10, 0.2) 100%),
-                url('https://images.unsplash.com/photo-1542314831-c5a4d407e202?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
+        .glass-panel:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-top: 1px solid rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
         }
 
-        .accent-gradient-text {
-            background: linear-gradient(to right, #FFF, #C27A3C);
+        /* Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Text Shimmer */
+        .shimmer-text {
+            background: linear-gradient(90deg, #fff 0%, #D4AF37 50%, #fff 100%);
+            background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: shimmer 4s linear infinite;
+        }
+
+        @keyframes shimmer {
+            to { background-position: 200% center; }
+        }
+
+        /* Custom Button */
+        .btn-premium {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .btn-premium::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .btn-premium:hover::after {
+            opacity: 1;
+        }
+
+        /* Hero Image Parallax Placeholder */
+        .hero-img-container {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+        }
+
+        /* Typography spacing */
+        h1, h2 {
+            letter-spacing: -0.02em;
+        }
+
+        .serif-italic {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
         }
     </style>
 </head>
 
-<body
-    class="bg-neutral-950 text-white font-sans antialiased overflow-x-hidden selection:bg-wood-500 selection:text-white">
+<body class="font-sans antialiased">
+    <div class="mesh-bg"></div>
 
-    <!-- Навигационная панель (Liquid Glass) -->
-    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 pt-4 md:pt-6 pb-4 px-4 md:px-8">
-        <div class="max-w-7xl mx-auto">
-            <nav
-                class="liquid-glass rounded-2xl md:rounded-full px-6 md:px-8 py-3.5 flex justify-between items-center transition-all">
+    <!-- Navigation -->
+    <header class="fixed top-0 w-full z-50 px-6 py-8">
+        <nav class="max-w-7xl mx-auto flex justify-between items-center glass-panel rounded-full px-8 py-4">
+            <a href="#" class="font-serif text-3xl font-bold flex items-center gap-2">
+                EcoFrame<span class="text-luxury-gold">.</span>
+            </a>
+            
+            <div class="hidden md:flex gap-10 text-sm font-medium tracking-widest uppercase opacity-70">
+                <a href="#projects" class="hover:opacity-100 transition-opacity">Коллекции</a>
+                <a href="#tech" class="hover:opacity-100 transition-opacity">Технологии</a>
+                <a href="#about" class="hover:opacity-100 transition-opacity">Философия</a>
+            </div>
 
-                <!-- Логотип -->
-                <a href="#" class="font-serif italic text-2xl md:text-3xl text-white flex items-center gap-2">
-                    EcoFrame<span class="text-wood-500 w-2 h-2 rounded-full bg-wood-500 inline-block mb-1"></span>
-                </a>
-
-                <!-- Десктоп Меню -->
-                <div class="hidden md:flex items-center gap-10 text-sm font-medium text-neutral-300 tracking-wide">
-                    <a href="#about" class="hover:text-white transition-colors duration-300">О компании</a>
-                    <a href="#projects" class="hover:text-white transition-colors duration-300">Проекты</a>
-                    <a href="#technology" class="hover:text-white transition-colors duration-300">Технологии</a>
-                </div>
-
-                <!-- Контакты/CTA -->
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="tel:+74950000000"
-                        class="text-sm font-medium font-sans hover:text-wood-500 transition-colors tracking-wide">+7
-                        (495) 000-00-00</a>
-                    <a href="#consultation"
-                        class="bg-forest-800 hover:bg-forest-900 border border-forest-800 text-white px-7 py-2.5 rounded-full text-sm font-medium transition-all shadow-lg shadow-forest-900/50 hover:border-wood-500/30">
-                        Обсудить проект
-                    </a>
-                </div>
-
-                <!-- Мобильное Меню (Бургер) -->
-                <button class="md:hidden text-neutral-300 hover:text-white p-2">
-                    <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                            d="M4 6h16M4 12h16M4 18h16" />
-                    </svg>
+            <div class="flex items-center gap-8">
+                <a href="tel:+74950000000" class="text-xs font-semibold tracking-tighter hidden sm:block">+7 (495) 000-00-00</a>
+                <button class="bg-luxury-gold text-luxury-dark px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-luxury-goldHover transition-all btn-premium">
+                    Консультация
                 </button>
-            </nav>
-        </div>
+            </div>
+        </nav>
     </header>
 
-    <!-- Главный Экран (Hero) -->
     <main>
-        <section class="relative min-h-[100dvh] flex flex-col justify-end bg-hero pt-32 pb-12 md:pb-20">
+        <!-- Hero Section -->
+        <section class="min-h-screen flex flex-col justify-center items-center relative overflow-hidden pt-32 pb-20">
+            <div class="absolute inset-0 z-0 hero-img-container opacity-40">
+                <img src="hero.png" alt="Premium Architecture" class="w-full h-full object-cover scale-110" id="heroImage">
+            </div>
 
-            <!-- Основной контент Hero -->
-            <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10 w-full mb-12 md:mb-20">
-                <div class="max-w-4xl">
-                    <!-- Заголовок H1 -->
-                    <h1
-                        class="font-serif text-5xl sm:text-6xl md:text-[5.5rem] text-white pr-4 mb-6 md:mb-8 drop-shadow-2xl">
-                        Архитектура леса. <br>
-                        <span class="italic text-neutral-300 font-light">Дома, в которых</span> <span
-                            class="accent-gradient-text">дышится легко.</span>
-                    </h1>
+            <div class="relative z-10 max-w-6xl mx-auto text-center px-4">
+                <span class="inline-block mb-6 text-luxury-gold tracking-[0.5em] uppercase text-xs font-bold reveal">The Art of Living</span>
+                <h1 class="font-serif text-6xl md:text-9xl mb-8 leading-[0.9] reveal" style="transition-delay: 0.1s">
+                    Архитектура <br> 
+                    <span class="serif-italic font-light opacity-80">глубокого покоя.</span>
+                </h1>
+                <p class="max-w-2xl mx-auto text-lg md:text-xl text-white/50 mb-12 font-light leading-relaxed reveal" style="transition-delay: 0.2s">
+                    Мы создаем не просто дома, а личные резиденции, интегрированные в ткань природы. Технологичность 2026 года в оболочке вневременного дизайна.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center reveal" style="transition-delay: 0.3s">
+                    <a href="#projects" class="group flex items-center gap-4 text-xs font-bold uppercase tracking-[0.3em] bg-white/5 border border-white/10 px-10 py-5 rounded-full hover:bg-white/10 transition-all">
+                        Смотреть проекты
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
 
-                    <!-- Подзаголовок (Inter) -->
-                    <p
-                        class="text-base md:text-xl text-neutral-300 mb-10 max-w-2xl leading-relaxed font-light tracking-wide">
-                        Мы создаем современные каркасные резиденции премиум-класса. Интеграция в природный ландшафт,
-                        строгие стандарты экологичности и исключительный уровень комфорта.
+        <!-- Stats Section (Liquid Glass) -->
+        <section class="py-20 px-6">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-panel p-10 rounded-3xl reveal">
+                    <div class="text-luxury-gold text-4xl font-serif mb-4 italic">15 лет</div>
+                    <div class="text-white/40 uppercase text-[10px] tracking-[0.3em] font-bold mb-2">Безупречности</div>
+                    <p class="text-sm font-light text-white/70">Юридическая гарантия на силовой каркас и целостность конструкций.</p>
+                </div>
+                <div class="glass-panel p-10 rounded-3xl reveal" style="transition-delay: 0.1s">
+                    <div class="text-luxury-gold text-4xl font-serif mb-4 italic">No Dry</div>
+                    <div class="text-white/40 uppercase text-[10px] tracking-[0.3em] font-bold mb-2">Эффективность</div>
+                    <p class="text-sm font-light text-white/70">Камерная сушка 12% — заезжайте и начинайте отделку в день сдачи.</p>
+                </div>
+                <div class="glass-panel p-10 rounded-3xl reveal" style="transition-delay: 0.2s">
+                    <div class="text-luxury-gold text-4xl font-serif mb-4 italic">Future Tech</div>
+                    <div class="text-white/40 uppercase text-[10px] tracking-[0.3em] font-bold mb-2">Технологии</div>
+                    <p class="text-sm font-light text-white/70">Интеллектуальное управление климатом и энергоэффективность класса A++.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Section -->
+        <section id="tech" class="py-32 px-6 bg-luxury-dark/50 overflow-hidden relative">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="reveal">
+                    <h2 class="font-serif text-5xl md:text-7xl mb-10 leading-tight">
+                        Магия <span class="serif-italic opacity-50 underline decoration-luxury-gold/30">материалов.</span>
+                    </h2>
+                    <p class="text-white/60 mb-12 font-light leading-relaxed text-lg">
+                        Использование древесины экстра-класса и бесшовного панорамного остекления создает невидимую границу между вами и лесом. Мы продумали каждый узел, чтобы дом оставался вашей крепостью десятилетиями.
                     </p>
-
-                    <!-- Кнопки -->
-                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6">
-                        <a href="#catalog"
-                            class="bg-wood-500 hover:bg-wood-600 text-white px-8 py-4 md:py-4.5 rounded-full font-medium text-center transition-all duration-300 shadow-xl shadow-wood-600/20 hover:shadow-wood-500/40 flex items-center justify-center gap-3 text-sm md:text-base tracking-wide uppercase">
-                            Выбрать проект
-                            <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                            </svg>
-                        </a>
-                        <a href="#portfolio"
-                            class="liquid-glass hover:bg-white/5 text-white px-8 py-4 md:py-4.5 rounded-full font-medium text-center transition-all duration-300 flex items-center justify-center text-sm md:text-base tracking-wide backdrop-blur-3xl">
-                            Смотреть портфолио
-                        </a>
+                    <ul class="space-y-6">
+                        <li class="flex items-center gap-4 group">
+                            <span class="w-2 h-2 rounded-full bg-luxury-gold group-hover:scale-150 transition-transform"></span>
+                            <span class="text-sm uppercase tracking-widest font-medium text-white/80">Доска камерной сушки (влажность 12-14%)</span>
+                        </li>
+                        <li class="flex items-center gap-4 group">
+                            <span class="w-2 h-2 rounded-full bg-luxury-gold group-hover:scale-150 transition-transform"></span>
+                            <span class="text-sm uppercase tracking-widest font-medium text-white/80">Остекление Guardian Glass с аргоновым наполнением</span>
+                        </li>
+                        <li class="flex items-center gap-4 group">
+                            <span class="w-2 h-2 rounded-full bg-luxury-gold group-hover:scale-150 transition-transform"></span>
+                            <span class="text-sm uppercase tracking-widest font-medium text-white/80">Экологичный базальтовый утеплитель Rockwool</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="relative reveal" style="transition-delay: 0.2s">
+                    <div class="aspect-[4/5] rounded-[2rem] overflow-hidden glass-panel p-2 shadow-2xl">
+                        <img src="detail.png" alt="Technology Detail" class="w-full h-full object-cover rounded-[1.5rem]">
                     </div>
+                    <!-- Ambient Light behind image -->
+                    <div class="absolute -inset-10 bg-luxury-gold/10 blur-[100px] -z-10 rounded-full"></div>
                 </div>
             </div>
-
-            <!-- E-E-A-T Триггеры (Liquid Glass Карточки) -->
-            <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10 w-full">
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-
-                    <!-- Карточка 1 -->
-                    <div class="liquid-card rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col gap-4">
-                        <div
-                            class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-white/5 mb-2">
-                            <svg class="w-5 h-5 text-wood-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                            </svg>
-                        </div>
-                        <h3 class="font-sans font-medium text-lg md:text-xl text-white tracking-wide">Гарантия 15 лет по
-                            договору</h3>
-                        <p class="text-sm text-neutral-400 leading-relaxed font-light mt-auto">Юридически закрепленная
-                            ответственность за силовой каркас и фундамент.</p>
-                    </div>
-
-                    <!-- Карточка 2 -->
-                    <div class="liquid-card rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col gap-4">
-                        <div
-                            class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-white/5 mb-2">
-                            <svg class="w-5 h-5 text-wood-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                            </svg>
-                        </div>
-                        <h3 class="font-sans font-medium text-lg md:text-xl text-white tracking-wide">Доска строгой
-                            камерной сушки</h3>
-                        <p class="text-sm text-neutral-400 leading-relaxed font-light mt-auto">Используем исключительно
-                            сухой строганый пиломатериал (влажность 12-14%).</p>
-                    </div>
-
-                    <!-- Карточка 3 -->
-                    <div class="liquid-card rounded-2xl md:rounded-3xl p-6 md:p-8 flex flex-col gap-4">
-                        <div
-                            class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center bg-white/5 mb-2">
-                            <svg class="w-5 h-5 text-wood-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                                    d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                            </svg>
-                        </div>
-                        <h3 class="font-sans font-medium text-lg md:text-xl text-white tracking-wide">Без усадки —
-                            заезжай сразу</h3>
-                        <p class="text-sm text-neutral-400 leading-relaxed font-light mt-auto">Технология позволяет
-                            начать чистовую отделку и переезд сразу после сдачи дома.</p>
-                    </div>
-
-                </div>
-            </div>
-
         </section>
     </main>
 
+    <footer class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
+            <div class="font-serif text-2xl font-bold">EcoFrame<span class="text-luxury-gold">.</span></div>
+            <div class="text-[10px] uppercase tracking-[0.5em] text-white/30">© 2026 EcoFrame. All Rights Reserved.</div>
+            <div class="flex gap-8">
+                <a href="#" class="text-xs uppercase tracking-widest text-white/50 hover:text-luxury-gold transition-colors">Telegram</a>
+                <a href="#" class="text-xs uppercase tracking-widest text-white/50 hover:text-luxury-gold transition-colors">WhatsApp</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Intersection Observer for Reveal Animations
+        const observerOptions = {
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Parallax Effect for Hero Image
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const heroImg = document.getElementById('heroImage');
+            if (heroImg) {
+                heroImg.style.transform = `translateY(${scrolled * 0.3}px) scale(1.1)`;
+            }
+        });
+
+        // Magnet Effect for Buttons
+        document.querySelectorAll('.btn-premium').forEach(btn => {
+            btn.addEventListener('mousemove', (e) => {
+                const rect = btn.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                const deltaX = (x - centerX) / 8;
+                const deltaY = (y - centerY) / 8;
+                
+                btn.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+            });
+            
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'translate(0, 0)';
+            });
+        });
+    </script>
 </body>
 
 </html>
